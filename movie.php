@@ -27,10 +27,10 @@
    
 
 ];
-function filter($items,$key,$value){
+function filter($items,$fn){
     $filteredMovies=[];
     foreach($items as $item){
-        if($item[$key]===$value ){
+        if($fn($item) ){
 
             $filteredMovies[]=$item;
     }
@@ -40,19 +40,21 @@ function filter($items,$key,$value){
 return $filteredMovies;
 
 
+
 }
-    
-    ?>
-    <ul>
+$filteredMovies=filter($movies,function($item){
+    return $item['name']==='interception';
+
+})
+?>
+
         
-        <?php 
-        
-        foreach(filter($movies,'name','interception') as $movie): ?>
+        <?php foreach($filteredMovies as $movie): ?>
         
             <a href=<?php $movie['Url']; ?> >
         
             <li><?= $movie['name']; ?> <?="(".$movie['releaseYear'].")"?>-by<?=" ".$movie['author'] ?> </li>
-    </ul>
+    
 
            
 
