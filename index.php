@@ -8,5 +8,7 @@ function dd($value)
     die();
 }
 
-
+function Urlis($value){
+    return $_SERVER['REQUEST_URI']===$value;
+}
 require("views/index.view.php");
