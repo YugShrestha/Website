@@ -1,7 +1,5 @@
-<?php
+<?php 
 
-
-$heading='Contact';
 function dd($value)
 {
     echo "<pre>";
@@ -10,8 +8,10 @@ function dd($value)
     die();
 }
 
+
 function Urlis($value){
     return $_SERVER['REQUEST_URI']===$value;
 }
-require "Views/contact.view.php";
+
+
 ?>
