@@ -8,7 +8,12 @@ $routes=[
     '/website/index1.php/about.php'=>'controller/index.php',
     '/website/index1.php/contact.php'=>'controller/index.php'
 ];
-   if(array_key_exists($uri,$routes)){
+  if(array_key_exists($uri,$routes)){
     require $routes[$uri];
-   }
-?>
+  }else {
+  http_response_code(404);
+ 
+  require "Views/404.php";
+  die();
+
+  }
