@@ -4,9 +4,9 @@
   
   <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-        <h1> sorry not found </h1>
-     <p>
-        <a href= "controller/index.php">go back to home </a>
+        <h1 class ="text-2xl font-bold"> Sorry not found </h1>
+     <p class="mt-4">
+        <a href="/website/index1.php" class="text-blue underline"> Go back to home </a>
     </p>
      
     </div>
