@@ -12,6 +12,5 @@ else if($uri==='/website/index1.php/about.php'){
     require 'controller/contact.php';
 }
 
-    
-
+   dd($uri);
 ?>
