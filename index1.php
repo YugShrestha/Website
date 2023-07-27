@@ -1,16 +1,14 @@
 <?php
 require("function.php"); 
-$uri = $_SERVER['REQUEST_URI'];
+$uri =parse_url( $_SERVER['REQUEST_URI'])['path'];
 
-if($uri==='/website/index1.php'){
- require 'controller/index.php';
-}
-else if($uri==='/website/index1.php/about.php'){
-    require 'controller/about.php';
-}else if
-($uri==='/website/index1.php/contact.php'){
-    require 'controller/contact.php';
-}
 
-   dd($uri);
+$routes=[
+    '/website/index1.php'=>'controller/index.php',
+    '/website/index1.php/about.php'=>'controller/index.php',
+    '/website/index1.php/contact.php'=>'controller/index.php'
+];
+   if(array_key_exists($uri,$routes)){
+    require $routes[$uri];
+   }
 ?>
