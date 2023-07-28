@@ -57,6 +57,7 @@ Class Query extends Connection
 $connection= new Query;
 $posts=$connection->getData('post');
 foreach($posts as $post){
-    echo "<li>".$post['title']."</li>";
-} 
+   echo 
+   "<pre>".$post['id']."-".$post['title']."</pre>";
+}
 
