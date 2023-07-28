@@ -1,10 +1,11 @@
 <?php require('partials/head.php')?>
+<?php require "database.php"; ?>
 
 <?php require('partials/nav.php') ?>
   <?php require('partials/banner.php') ?>
   <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-     <p>hello. welcome to home pag</p>
+     <p><?php echo "<pre>".$post['id']."-".$post['title'][0]."</pre>";?> </p>
     </div>
   </main>
 <?php require('partials/footer.php')?>

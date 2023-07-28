@@ -3,7 +3,7 @@
 
 
 require("function.php"); 
-//require "router.php";
+require "router.php";
 require("database.php");
 
 
