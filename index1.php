@@ -1,20 +1,31 @@
 <?php
 
-require("function.php"); 
+require("function.php");
 //require "router.php";
+class Database
 
+{
+   public $connection;
 
-$dsn="mysql:host=localhost;port=3306;dbname=demo;";
+    public function __construct()
+    {
+        $dsn = "mysql:host=localhost;port=3306;dbname=demo;";
 
-$pdo= new PDO($dsn,'root');// pdo class is already created  just called class lai naya object ma halya 
-$statement =$pdo->prepare("select * from  post");
-$statement->execute();
+        $this->connection = new PDO($dsn, 'root'); // pdo class is already created  just called class lai naya object ma halya 
+        
+    }
+    public function query($query)
+    {
+ 
+        $statement = $this->connection->prepare($query);
+        $statement->execute();
 
+        return $statement->fetch(PDO::FETCH_ASSOC); // fetch class called
 
+       
+    }
+}
+$db=new Database();
+$posts=$db->query("select * from post where id=1");
 
-
-
-
-$post= $statement->fetchAll();
-
-dd($post);
+dd($posts['title']);
