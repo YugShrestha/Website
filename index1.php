@@ -9,9 +9,9 @@ class Database
 
     public function __construct()
     {
-        $dsn = "mysql:host=localhost;port=3306;dbname=demo;";
+        $dsn = "mysql:host=localhost;port=3306;user=root;dbname=demo;";
 
-        $this->connection = new PDO($dsn, 'root'); // pdo class is already created  just called class lai naya object ma halya 
+        $this->connection = new PDO($dsn); // pdo class is already created  just called class lai naya object ma halya 
         
     }
     public function query($query)
@@ -20,12 +20,12 @@ class Database
         $statement = $this->connection->prepare($query);
         $statement->execute();
 
-        return $statement->fetch(PDO::FETCH_ASSOC); // fetch class called
+        return $statement;// fetch class called
 
        
     }
 }
 $db=new Database();
-$posts=$db->query("select * from post where id=1");
+$posts=$db->query("select * from post")->fetchAll(PDO::FETCH_ASSOC); 
 
-dd($posts['title']);
+dd($posts);
