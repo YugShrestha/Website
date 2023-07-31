@@ -6,7 +6,7 @@
  <?php require('partials/banner.php') ?>
   <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-     <p>Hello. Welcome to contact page</p>
+     <p>asdasd</p>
     </div>
   </main>
   <?php require('partials/footer.php')?>
