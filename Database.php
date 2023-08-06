@@ -16,7 +16,7 @@ class Database
     public function query($query)
     {
  
-        $statement = $this->connection->prepare($query);
+        $statement = $this->connection->prepare($query);// pdo class ko function prepare bhitra some query haleko..
         $statement->execute();
 
         return $statement;// fetch class called
